@@ -26,5 +26,5 @@ Run this in terminal:
 ```bash
 python app.py
 ```
-### 3. Open the Application:
+### 3. Open The Application:
 Open your browser and go to: http://localhost:5000
