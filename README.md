@@ -39,11 +39,11 @@ You can fix this by running the following command inside the `modules` folder:
 g++ -fPIC -shared help.cpp -o help.so
 ```
 Then, update your Python code inside the modules files:
-```
+```python
 self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "help.dll"))
 ```
 To:
-```
+```python
 self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "help.so"))
 ```
 Finally, you can delete help.dll since it is not needed on this operating system.
