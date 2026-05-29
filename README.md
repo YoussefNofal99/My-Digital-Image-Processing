@@ -30,3 +30,20 @@ python app.py
 ```
 ### 3. Open The Application:
 Open your browser and go to: http://localhost:5000
+
+
+## On Other Operating Systems:
+You may encounter issues because the shared library file differs between operating systems. On Windows it is `.dll`, while on Linux it should be `.so`.
+You can fix this by running the following command inside the `modules` folder:
+```bash
+g++ -fPIC -shared help.cpp -o help.so
+```
+Then, update your Python code inside the modules files:
+```
+self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "help.dll"))
+```
+To:
+```
+self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "help.so"))
+```
+Finally, you can delete help.dll since it is not needed on this operating system.
