@@ -3,7 +3,7 @@ This project is a web application designed to apply various image processing tas
 This project uses Python (Flask) in the backend, HTML, CSS, and JavaScript in the frontend, and implements functionality using Python libraries such as NumPy and OpenCV. It also uses C++ to implement custom functions and improve performance, keeping the code fast and efficient.
 
 
-## for setup on windows:
+## For Setup On Windows:
 ### 1. Create The Virtual Environment(optional):
 Run this in terminal:
 ```bash
