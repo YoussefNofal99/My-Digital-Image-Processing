@@ -7,7 +7,7 @@ Run this in terminal:
 ```bash
 python -m venv venv
 ```
-Then:
+Then active it:
 ```bash
 venv\Scripts\activate
 ```
@@ -26,5 +26,5 @@ Run this in terminal:
 ```bash
 python app.py
 ```
-### 3. Open The Program:
-Open the browser: http://localhost:5000
+### 3. Open the Application:
+Open your browser and go to: http://localhost:5000
