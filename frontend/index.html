@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DIP Project</title>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='images/logo.png') }}" rel="icon">
+    </head>
+    <body>
+        <div id="loading-overlay" class="hidden">
+            <div class="spinnercover">
+                <div class="running">
+                    <video autoplay loop muted playsinline id="sonic">
+                        <source src="{{ url_for('static', filename='images/dh19q32-9fb48570-e76e-4ed5-9706-5951229d0d3f.webm') }}" type="video/webm">
+                    </video>
+                </div>
+                <div class="spinner"></div>
+                <p class="loadingtext">Processing</p>
+            </div>
+        </div>
+
+        <main class="main">
+            <aside class="controls">
+                <section class="panel">
+                    <h2 class="sectiontitle">Upload Image</h2>
+                    <div class="upload-zone" id="upload-zone">
+                        <input type="file" id="image-input" accept="image/*" hidden>
+                        <div class="upload-content" id="upload-content">
+                            <div class="uploadicon">↑</div>
+                            <p class="uploadlabel">Drop image here</p>
+                            <p class="uploadhint">Size of image &lt; 20MB</p>
+                        </div>
+                        <img id="upload-preview" class="upload-preview hidden" alt="Preview">
+                    </div>
+                </section>
+
+                <section class="panel" id="second-image-section" style="display: none;">
+                    <h2 class="sectiontitle">Upload Second Image</h2>
+                    <div class="upload-zone" id="upload-zone-2">
+                        <input type="file" id="image-input-2" accept="image/*" hidden>
+                        <div class="upload-content" id="upload-content-2">
+                        <div class="uploadicon" style="font-size: 1.2rem;">↑</div>
+                        <p class="uploadlabel">Drop image here</p>
+                        <p class="uploadhint">Size of image &lt; 20MB</p>
+                        </div>
+                        <img id="upload-preview-2" class="upload-preview hidden" alt="Preview">
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h2 class="sectiontitle">Select Operation</h2>
+                    <div class="operations-list" id="operations-list"></div>
+                </section>
+
+                <section class="panel" id="para-section" style="display:none;">
+                    <h2 class="sectiontitle">Parameters</h2>
+                    <div class="para-grid" id="para-grid"></div>
+                </section>
+
+                <button class="process-btn" id="process-btn" disabled>
+                    <span>Apply Operation</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </aside>
+
+            <section class="display">
+                <div class="displayheader">
+                    <div class="buttons">
+                        <button class="downloadbtn hidden" id="download-btn">↓ Download Result</button>
+                        <button id="download-subplot-btn" class="downloadbtn hidden">🆚 Download Comparison</button>
+                        <button id="download-hist-btn" class="downloadbtn hidden">📊 Download Histogram</button>
+                    </div>
+                    <div class="torch-toggle" id="themeToggle" title="Toggle Theme">
+                        <img id="themeIcon" src="{{ url_for('static', filename='images/Dark-Torch.gif') }}" alt="icon">
+                         <img id="hoverIcon" class="torch-hover-preview" src="{{ url_for('static', filename='images/Torch.gif') }}" alt="preview">
+                    </div>
+                </div>
+
+                <div class="image-comparison" id="image-comparison">
+                    <div class="img">
+                        <div class="imglabel">Original</div>
+                        <div class="pane-body" id="original-pane">
+                            <div class="placeholder"><p>Upload an image to begin</p></div>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="img">
+                        <div class="imglabel">Result</div>
+                        <div class="pane-body" id="processed-pane">
+                            <div class="placeholder"><p>Select an operation and click Apply</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-bar" id="info-bar">
+                    <span id="info-op">No operation selected</span>
+                    <span id="info-status" class="status-dot idle">●  NONE</span>
+                </div>
+            </section>
+        </main>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
