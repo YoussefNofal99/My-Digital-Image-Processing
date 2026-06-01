@@ -198,18 +198,18 @@ const OPERATIONS = [
         para: [{ id:'x', label:'Kernel Size', type:'range', min:1, max:15, step:2, def:3 }] },
       { id: 'max',     name: 'Max Filter',
         para: [
-          { id:'x', label:'Kernel Width',  type:'range', min:1, max:11, def:3 },
-          { id:'y', label:'Kernel Height', type:'range', min:1, max:11, def:3 },
+          { id:'x', label:'Kernel Width',  type:'range', min:1, max:15, def:3 },
+          { id:'y', label:'Kernel Height', type:'range', min:1, max:15, def:3 },
         ]},
       { id: 'min',     name: 'Min Filter',
         para: [
-          { id:'x', label:'Kernel Width',  type:'range', min:1, max:11, def:3 },
-          { id:'y', label:'Kernel Height', type:'range', min:1, max:11, def:3 },
+          { id:'x', label:'Kernel Width',  type:'range', min:1, max:15, def:3 },
+          { id:'y', label:'Kernel Height', type:'range', min:1, max:15, def:3 },
         ]},
       { id: 'mode',    name: 'Mode Filter',
         para: [
-          { id:'x', label:'Kernel Width',  type:'range', min:1, max:7, def:3 },
-          { id:'y', label:'Kernel Height', type:'range', min:1, max:7, def:3 },
+          { id:'x', label:'Kernel Width',  type:'range', min:1, max:15, def:3 },
+          { id:'y', label:'Kernel Height', type:'range', min:1, max:15, def:3 },
         ]},
     ]
   },
