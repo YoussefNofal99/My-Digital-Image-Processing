@@ -9,7 +9,7 @@ class color_operation:
     
     def swap(self, i=0, j = 1):
         result = self.image.copy()
-        result[:,:,i], result[:,:,j] = result[:,:,j], result[:,:,i]
+        result[:,:,i], result[:,:,j] = self.image[:,:,j], self.image[:,:,i]
         return result
     
     def eliminate(self, i=0):
