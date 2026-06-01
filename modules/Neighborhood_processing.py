@@ -23,7 +23,9 @@ class Linear_filter:
                                [1, -2, 1]])
         result = self.image.copy()
         result = cv2.cvtColor(result, cv2.COLOR_RGB2GRAY)
-        result = cv2.filter2D(result, -1, kernel)
+        result = cv2.filter2D(result, cv2.CV_64F, kernel)
+        result = np.absolute(result)
+        result = np.clip(result, 0, 255)
         return result.astype(np.uint8)
     
 class Non_linear_filters:
