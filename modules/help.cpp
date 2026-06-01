@@ -1,7 +1,4 @@
 #include <cstdint>
-#include <algorithm>
-#include <cstdint>
-#include <vector>
 #include <cmath>
 using namespace std;
 extern "C"
@@ -64,28 +61,31 @@ extern "C"
             {
                 for (int j = b; j < col - b; j++)
                 {
-                    vector<pair<int, uint8_t> > freq(256, {0, 0});
+                    int freq[256] = {0};
+                    int maxi = 0;
                     for (int x = i - a;x <= i + a; x++)
                     {
                         for (int y = j - b;y <= j + b; y++)
                         {
-                            freq[arr[(x * col + y) * 3 + ch]].first++;
-                            freq[arr[(x * col + y) * 3 + ch]].second = arr[(x * col + y) * 3 + ch];
+
+                            freq[arr[(x * col + y) * 3 + ch]]++;
+                            if (freq[arr[(x * col + y) * 3 + ch]] > maxi)
+                            {
+                                maxi = freq[arr[(x * col + y) * 3 + ch]];
+                            }
                         }
                     }
-                    sort(freq.begin(), freq.end());
-                    uint8_t mode = freq[255].second;
-                    int sum = freq[255].second;
-                    int count = 1;
-                    int z = 255;
-                    while(z > 0 && freq[z].first == freq[z - 1].first)
+                    int sum = 0;
+                    int count = 0;
+                    for (int z = 0; z < 256; z++)
                     {
-                        z--;
-                        sum += freq[z].second;
-                        count++;
+                        if (maxi == freq[z])
+                        {
+                            sum += z;
+                            count++;
+                        }
                     }
-                    mode = sum / count;
-                    result[(i * col + j) * 3 + ch] = static_cast<uint8_t>(mode);
+                    result[(i * col + j) * 3 + ch] = static_cast<uint8_t>(sum /count);
                 }
             }
         }
