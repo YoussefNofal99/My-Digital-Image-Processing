@@ -3,18 +3,18 @@
 using namespace std;
 extern "C"
 {    
-    void cmax(const uint8_t* arr, uint8_t* result, int row, int col, int a, int b)
+    void cmax(const uint8_t* arr, uint8_t* result, int row, int col, int a, int b, int c, int d)
     {
         for (int ch = 0; ch < 3; ch++)
         {
-            for (int i = a; i < row - a; i++)
+            for (int i = a; i < row - c; i++)
             {
-                for (int j = b; j < col - b; j++)
+                for (int j = b; j < col - d; j++)
                 {
                     uint8_t maxi = 0;
-                    for (int x = i - a;x <= i + a; x++)
+                    for (int x = i - a;x <= i + c; x++)
                     {
-                        for (int y = j - b;y <= j + b; y++)
+                        for (int y = j - b;y <= j + d; y++)
                         {
                             if (maxi < arr[(x * col + y) * 3 + ch])
                             {
@@ -28,18 +28,18 @@ extern "C"
         }
     }
 
-    void cmin(const uint8_t* arr, uint8_t* result, int row, int col, int a, int b)
+    void cmin(const uint8_t* arr, uint8_t* result, int row, int col, int a, int b, int c, int d)
     {
         for (int ch = 0; ch < 3; ch++)
         {
-            for (int i = a; i < row - a; i++)
+            for (int i = a; i < row - c; i++)
             {
-                for (int j = b; j < col - b; j++)
+                for (int j = b; j < col - d; j++)
                 {
                     uint8_t mini = 255;
-                    for (int x = i - a;x <= i + a; x++)
+                    for (int x = i - a;x <= i + c; x++)
                     {
-                        for (int y = j - b;y <= j + b; y++)
+                        for (int y = j - b;y <= j + d; y++)
                         {
                             if (mini > arr[(x * col + y) * 3 + ch])
                             {
@@ -53,19 +53,19 @@ extern "C"
         }
     }
 
-    void cmode(const uint8_t* arr, uint8_t* result, int row, int col, int a, int b)
+    void cmode(const uint8_t* arr, uint8_t* result, int row, int col, int a, int b, int c, int d)
     {
         for (int ch = 0; ch < 3; ch++)
         {
-            for (int i = a; i < row - a; i++)
+            for (int i = a; i < row - c; i++)
             {
-                for (int j = b; j < col - b; j++)
+                for (int j = b; j < col - d; j++)
                 {
                     int freq[256] = {0};
                     int maxi = 0;
-                    for (int x = i - a;x <= i + a; x++)
+                    for (int x = i - a;x <= i + c; x++)
                     {
-                        for (int y = j - b;y <= j + b; y++)
+                        for (int y = j - b;y <= j + d; y++)
                         {
 
                             freq[arr[(x * col + y) * 3 + ch]]++;
