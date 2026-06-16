@@ -45,14 +45,16 @@ class Non_linear_filters:
         result = self.image.copy()
         a = x // 2
         b = y // 2
+        c = x - a - 1
+        d = y - b - 1
         func = self.p.cmax
-        func.argtypes = [self.ptr, self.ptr, self.i, self.i, self.i, self.i]
+        func.argtypes = [self.ptr, self.ptr, self.i, self.i, self.i, self.i, self.i, self.i]
         func.restype = None
         img = np.ascontiguousarray(self.image, dtype=np.uint8)
         pimg = img.ctypes.data_as(self.ptr)
         result = np.ascontiguousarray(result, dtype=np.uint8)
         res = result.ctypes.data_as(self.ptr)
-        func(pimg, res, row, col, a, b)
+        func(pimg, res, row, col, a, b, c, d)
         return result.astype(np.uint8)
     
     def minfilter(self, x=3, y=3):
@@ -60,14 +62,16 @@ class Non_linear_filters:
         result = self.image.copy()
         a = x // 2
         b = y // 2
+        c = x - a - 1
+        d = y - b - 1
         func = self.p.cmin
-        func.argtypes = [self.ptr, self.ptr, self.i, self.i, self.i, self.i]
+        func.argtypes = [self.ptr, self.ptr, self.i, self.i, self.i, self.i, self.i, self.i]
         func.restype = None
         img = np.ascontiguousarray(self.image, dtype=np.uint8)
         pimg = img.ctypes.data_as(self.ptr)
         result = np.ascontiguousarray(result, dtype=np.uint8)
         res = result.ctypes.data_as(self.ptr)
-        func(pimg, res, row, col, a, b)
+        func(pimg, res, row, col, a, b, c, d)
         return result.astype(np.uint8)
     
     def modefilter(self, x=3, y=3):
@@ -75,12 +79,14 @@ class Non_linear_filters:
         result = self.image.copy()
         a = x // 2
         b = y // 2
+        c = x - a - 1
+        d = y - b - 1
         func = self.p.cmode
-        func.argtypes = [self.ptr, self.ptr, self.i, self.i, self.i, self.i]
+        func.argtypes = [self.ptr, self.ptr, self.i, self.i, self.i, self.i, self.i, self.i]
         func.restype = None
         img = np.ascontiguousarray(self.image, dtype=np.uint8)
         pimg = img.ctypes.data_as(self.ptr)
         result = np.ascontiguousarray(result, dtype=np.uint8)
         res = result.ctypes.data_as(self.ptr)
-        func(pimg, res, row, col, a, b)
+        func(pimg, res, row, col, a, b, c, d)
         return result.astype(np.uint8)
