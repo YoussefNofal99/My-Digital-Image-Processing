@@ -71,4 +71,15 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 - **Multiplication**: Scales pixel intensities to enhance brightness.
 - **Division**: Reduces pixel intensities.
 - **Complement**: Produces the negative version of the image.
+#### *Example*
 ![Example](./examples/Point_Operations.png)
+### Image Operations
+#### These operations apply arithmetic transformations between two images on a pixel-by-pixel basis. If the input images have different dimensions, the second image is automatically resized to match the first image.
+- **Addition**: Combines two images by adding corresponding pixel values.
+- **Subtraction**: Computes the difference between two images.
+- **Multiplication**: Enhances or suppresses regions based on pixel interaction.
+- **Division**: Highlights intensity differences between images.
+- **Complement**: Produces the negative version of the image.
+#### *Example*
+![Example](./examples/Point_Operations.png)
+
