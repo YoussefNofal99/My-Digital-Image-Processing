@@ -64,6 +64,7 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 *Finally, you can delete help.dll since it is not needed on this operating system.*
 
 ## Operations
+
 ### Arithmetic Operations
 #### These operations modify pixel intensity values using basic mathematical transformations.
 - **Addition**: Increases image brightness by adding a constant to each pixel.
@@ -73,6 +74,7 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 - **Complement**: Produces the negative version of the image.
 #### *Example*
 ![Example](./examples/Point_Operations.png)
+
 ### Image Arithmetic Operations
 #### These operations apply arithmetic transformations between two images on a pixel-by-pixel basis. If the input images have different dimensions, the second image is automatically resized to match the first image.
 - **Addition**: Combines two images by adding corresponding pixel values.
@@ -82,4 +84,12 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 - **Complement**: Produces the negative version of the image.
 #### *Example*
 ![Example](./examples/Image_Operations.png)
+
+### Color Channel Operations
+#### These operations manipulate individual color channels of an RGB image to modify color composition and visualize channel contributions.
+- **Change Channel Value**: Sets all pixel values of a selected color channel to a constant value.
+- **Swap Channels**: Exchanges two color channels (e.g., Red ↔ Blue).
+- **Eliminate Channel**: Removes a channel by setting all its values to zero.
+#### *Example*
+![Example](./examples/Color_Operations.png)
 
