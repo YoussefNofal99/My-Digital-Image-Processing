@@ -61,6 +61,13 @@ To:
 ```python
 self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "help.dylib"))
 ```
-#### Finally, you can delete help.dll since it is not needed on this operating system.
+*Finally, you can delete help.dll since it is not needed on this operating system.*
 
-###
+## Operations
+### Point Operations
+#### These operations modify pixel intensity values using basic mathematical transformations.
+- **Addition**: Increases image brightness by adding a constant to each pixel.
+- **Subtraction**: Decreases image brightness.
+- **Multiplication**: Scales pixel intensities to enhance brightness.
+- **Division**: Reduces pixel intensities.
+- **Complement**: Produces the negative version of the image.
