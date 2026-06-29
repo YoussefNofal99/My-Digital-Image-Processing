@@ -71,3 +71,4 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 - **Multiplication**: Scales pixel intensities to enhance brightness.
 - **Division**: Reduces pixel intensities.
 - **Complement**: Produces the negative version of the image.
+![Example](./examples/Point Operations.png)
