@@ -93,3 +93,11 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 #### *Example*
 ![Example](./examples/Color_Operations.png)
 
+### Histogram Operations:
+#### Histogram-based operations are used to analyze and enhance image contrast by redistributing intensity values.
+- **Histogram Stretching**: Expands the intensity range of an image to improve contrast.
+- **Histogram Equalization**: Redistributes intensity values to produce a more uniform histogram and reveal hidden details.
+#### *Example*
+![Example](./examples/Histogram.png)
+![Example](./examples/Histogram_example.png)
+
