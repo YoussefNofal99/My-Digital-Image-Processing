@@ -134,3 +134,15 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 #### *Example*
 ![Example](./examples/Thresholding.png)
 
+### Morphological Operations:
+#### Morphological operations are shape-based image processing techniques applied to binary images. They are commonly used for object refinement, noise removal, boundary extraction, and shape analysis.
+- **Dilation**: Expands foreground regions by adding pixels to object boundaries, helping fill small holes and connect nearby objects.
+- **Erosion**: Shrinks foreground regions by removing boundary pixels, useful for eliminating small noise.
+- **Opening**: Applies erosion followed by dilation. It removes small noise while preserving larger structures.
+- **Closing**: Applies dilation followed by erosion. It fills small holes and gaps inside objects.
+- **Internal Boundary**: Extracts object boundaries from inside the object using: Internal Boundary = Original − Erosion
+- **External Boundary**: Extracts outer boundaries using: External Boundary = Dilation − Original
+- **Morphological Gradient**: Highlights full object boundaries using: Gradient = Dilation − Erosion
+#### *Example*
+![Example](./examples/Morphological.png)
+
