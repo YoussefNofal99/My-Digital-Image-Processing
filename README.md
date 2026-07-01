@@ -126,3 +126,11 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 #### *Example*
 ![Example](./examples/Gaussian.png)
 
+### Thresholding Operations:
+#### Thresholding is a segmentation technique used to separate foreground objects from the background by converting grayscale images into binary images.
+- **Global Thresholding**: Uses a single threshold value for the entire image. Pixels above the threshold become white, while others become black.
+- **Adaptive Thresholding**: Computes a local threshold for each neighborhood, making it effective for images with uneven illumination.
+- **Automatic Thresholding**: Iteratively estimates the optimal threshold by partitioning pixels into two groups and updating the threshold using their mean intensities.
+#### *Example*
+![Example](./examples/Thresholding.png)
+
