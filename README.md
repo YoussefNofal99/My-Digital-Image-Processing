@@ -146,3 +146,10 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 #### *Example*
 ![Example](./examples/Morphological.png)
 
+### Linear Filtering Operations:
+#### Linear filtering applies convolution kernels to an image in order to smooth noise or enhance important image features such as edges.
+- **Average Filter**: Smooths the image by replacing each pixel with the average value of its neighboring pixels. It reduces noise but may blur edges and fine details.
+- **Laplacian Filter**: Uses the second derivative to detect rapid intensity changes, making it effective for edge enhancement and sharpening.
+#### *Example*
+![Example](./examples/Linear.png)
+
