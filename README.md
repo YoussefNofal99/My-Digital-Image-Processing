@@ -253,6 +253,18 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 - **Channel-wise Processing**: Filtering is applied independently to each color channel.
 - **Python–C Integration (`ctypes`)**: Computationally intensive filters are implemented in C/C++ and accessed from Python through a DLL for faster execution.
 - **Memory Pointer Optimization**: NumPy arrays are converted into contiguous memory blocks and passed as raw pointers to native functions for efficient pixel-level processing.
+#### *Code Example*
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; padding: 0;">
+      <img src="./examples/cmode.png" style="width: 100%; height: auto; display: block;">
+    </td>
+    <td style="width: 50%; padding: 0;">
+      <img src="./examples/mode.png" style="width: 100%; height: auto; display: block;">
+    </td>
+  </tr>
+</table>
+
 #### *Example*
 ![Example](./examples/Nonlinear.png)
 
