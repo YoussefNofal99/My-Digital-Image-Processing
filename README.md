@@ -111,11 +111,18 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 
 ### Salt-and-Pepper Noise Processing:
 #### Salt-and-pepper noise is a type of impulse noise where random pixels are replaced with extreme intensity values (black or white). This module supports adding noise artificially and applying different filtering techniques for noise removal.
-
 - **Salt-and-Pepper Noise Addition**: Randomly replaces selected pixels with white (salt) or black (pepper) values to simulate impulse noise.
 - **Outlier Filter**: Compares each pixel with the mean of its neighboring pixels. If the difference exceeds a threshold, the pixel is replaced by the local mean.
 - **Average Filter**: Applies a mean kernel over neighboring pixels to smooth noise by averaging intensities.
 - **Median Filter**: Replaces each pixel with the median value of its neighborhood. This is highly effective for salt-and-pepper noise because it removes outliers while preserving edges.
 #### *Example*
 ![Example](./examples/Salt_Pepper.png)
+
+### Gaussian Noise Processing:
+#### Gaussian noise is a statistical noise model where pixel intensity values are disturbed by values sampled from a normal (Gaussian) distribution. This module supports adding Gaussian noise and applying noise reduction techniques.
+- **Gaussian Noise Addition**: Adds random values sampled from a normal distribution with configurable mean and standard deviation.
+- **Average Filter**: Reduces Gaussian noise by smoothing local intensity variations using neighborhood averaging.
+- **Image Averaging**: Averages multiple noisy versions of the same image. Random noise tends to cancel out, improving image quality.
+#### *Example*
+![Example](./examples/Gaussian.png)
 
