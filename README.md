@@ -142,6 +142,18 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 - **Memory Pointer Handling**: Image arrays are converted into contiguous memory blocks and passed as raw pointers to native C functions for faster processing.
 - **Performance Optimization**: Using C/C++ for pixel-level operations significantly reduces execution time compared to pure Python loops.
 - **Pixel Value Clipping**: Edge magnitudes are clipped to the valid intensity range `[0, 255]`.
+#### *Code Example*
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; padding: 0;">
+      <img src="./examples/croberts.png" style="width: 100%; height: auto; display: block;">
+    </td>
+    <td style="width: 50%; padding: 0;">
+      <img src="./examples/roberts.png" style="width: 100%; height: auto; display: block;">
+    </td>
+  </tr>
+</table>
+
 #### *Example*
 ![Example](./examples/Edge_Detection.png)
 
