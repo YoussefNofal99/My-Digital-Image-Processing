@@ -109,3 +109,13 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 #### *Example*
 ![Example](./examples/Edge_Detection.png)
 
+### Salt-and-Pepper Noise Processing:
+#### Salt-and-pepper noise is a type of impulse noise where random pixels are replaced with extreme intensity values (black or white). This module supports adding noise artificially and applying different filtering techniques for noise removal.
+
+- **Salt-and-Pepper Noise Addition**: Randomly replaces selected pixels with white (salt) or black (pepper) values to simulate impulse noise.
+- **Outlier Filter**: Compares each pixel with the mean of its neighboring pixels. If the difference exceeds a threshold, the pixel is replaced by the local mean.
+- **Average Filter**: Applies a mean kernel over neighboring pixels to smooth noise by averaging intensities.
+- **Median Filter**: Replaces each pixel with the median value of its neighborhood. This is highly effective for salt-and-pepper noise because it removes outliers while preserving edges.
+#### *Example*
+![Example](./examples/Salt_Pepper.png)
+
