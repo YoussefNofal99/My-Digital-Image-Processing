@@ -153,3 +153,12 @@ self.p = ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)), "h
 #### *Example*
 ![Example](./examples/Linear.png)
 
+### Non-Linear Filtering Operations:
+#### Non-linear filters process each pixel based on statistical properties of its neighborhood rather than linear convolution. They are especially useful for noise reduction while preserving edges and image structures.
+- **Median Filter**: Replaces each pixel with the median value of neighboring pixels. It is highly effective for removing impulse noise while preserving edges.
+- **Max Filter**: Replaces each pixel with the maximum value in its neighborhood. It enhances bright regions and expands high-intensity areas.
+- **Min Filter**: Replaces each pixel with the minimum value in its neighborhood. It enhances dark regions and expands low-intensity areas.
+- **Mode Filter**: Replaces each pixel with the most frequent intensity value in its neighborhood. It helps smooth homogeneous regions while preserving dominant local patterns.
+#### *Example*
+![Example](./examples/Nonlinear.png)
+
